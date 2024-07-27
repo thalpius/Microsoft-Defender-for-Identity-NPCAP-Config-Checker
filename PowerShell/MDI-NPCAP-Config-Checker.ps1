@@ -12,7 +12,7 @@
   settings which Microsoft Defender for Identity expects. If one of the items fail, validate
   if the setting can be changed to whatever it expects and restart the NPCAP service.
  
-.EXAMPLES
+.EXAMPLE
 
   MDIcheckServices
   MDIcheckRegistryProperty -registryKey 'HKLM:\\SOFTWARE\\Wow6432Node\\npcap' -registryProperty 'AdminOnly' -registryValue 0
