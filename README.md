@@ -1,26 +1,26 @@
 > [!IMPORTANT]
-> "Blog post is coming ASAP"
+> "Blog post is coming soon!"
 
 # Microsoft Defender for Identity NPCAP Config Checker
 
-I created a small program to test the "Entities exposing credentials in clear text" Secure Score Recommended Action for Microsoft Defender for Identity. For more information, please check the official documentation from Microsoft:
+Microsoft Defender for Identity uses NPCAP to inspect packets for malicious intent. Sometimes, NPCAP is not configured correctly for Microsoft Defender for Identity or NPCAP is installed by another program with different settings resulting in health issues reported by Microsoft Defender for Identity. This script will check the NPCAP settings which Microsoft Defender for Identity expects.
+
+For more information, please check the official documentation from Microsoft:
 
 https://learn.microsoft.com/en-us/defender-for-identity/health-alerts#sensor-has-issues-with-packet-capturing-component
 
 ## ⚙️ Features
 
-- Creates an LDAP connection to a Domain Controller using a simple Bind
-- Using arguments for the server, username, and password to make it simple for anyone to use
-- Triggers "Exposed Entities" for the "Stop clear text credentials exposure" recommended action in secure score
+- Checks if the NPCAP service is running using the services names NPCAP or NPF
+- Checks the registry settings for AdminOnly, LoopbackSupport and WinPcapCompatible
+- Check if the property LoopbackAdapter exists and if it does, it fails
 
 ## 🛠️ Usage
 
-Enter a Domain Controller as the ldapserver, the Distinguished Name of a user account, and the corresponding password. Here is an example:
+Save the script to the Domain Controller and run the script to validate the NPCAP settings
 ````
-SimpleLDAPBind.exe /ldapServer:"DC01" /userDN:"CN=thalpius,CN=Users,DC=yoshis,DC=island" /password:"SimpleLDAPBind01!"
+& '.\MDI NPCAP Config Checker.ps1'
 ````
-
-> **_NOTE:_** Use the "Attribute Editor" in "Active Directory Users and Computers" on the object to find the Distinguished Name for a user account.
 
 ## 📄 Blog
 
