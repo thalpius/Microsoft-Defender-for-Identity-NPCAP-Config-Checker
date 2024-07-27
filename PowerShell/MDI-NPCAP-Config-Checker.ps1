@@ -15,7 +15,12 @@
 .EXAMPLE
 
   MDIcheckServices
+  
+.EXAMPLE
+
   MDIcheckRegistryProperty -registryKey 'HKLM:\\SOFTWARE\\Wow6432Node\\npcap' -registryProperty 'AdminOnly' -registryValue 0
+.EXAMPLE
+
   MDIcheckRegistryKey -registryKey 'HKLM\\SYSTEM\\CurrentControlSet\\Services\\npcap\\Parameters' -registryProperty 'LoopbackAdapter'
   
 .INPUTS
