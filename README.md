@@ -31,8 +31,8 @@ https://thalpius.com/
 ## 📺 Screenshots
 Here is an example of a passed config for NPCAP:
 
-![Alt text](/Screenshots/MicrosoftDefenderForIdentitySimpleLDAPBind01.png?raw=true "Microsoft Defender for Identity NPCAP Config Checker Pass")
+![Alt text](/Screenshots/MicrosoftDefenderForIdentityNPCAPConfigChecker01.png?raw=true "Microsoft Defender for Identity NPCAP Config Checker Pass")
 
 Here is an example of a failed config for NPCAP:
 
-![Alt text](/Screenshots/MicrosoftDefenderForIdentitySimpleLDAPBind02.png?raw=true "Microsoft Defender for Identity NPCAP Config Checker Fail")
+![Alt text](/Screenshots/MicrosoftDefenderForIdentityNPCAPConfigChecker02.png?raw=true "Microsoft Defender for Identity NPCAP Config Checker Fail")
