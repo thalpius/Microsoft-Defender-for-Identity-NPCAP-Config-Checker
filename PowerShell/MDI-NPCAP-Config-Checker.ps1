@@ -62,12 +62,13 @@ function MDIcheckServices {
     process {
         try {
             if ((Get-Service -Name npcap -ErrorAction SilentlyContinue) -or (Get-Service -Name npf -ErrorAction SilentlyContinue)) {
-                Write-Host 'Checking if NPCAP service or NPF service is running: ' -NoNewline
-                Write-Host 'Pass' -ForegroundColor Green
+                Write-Host '[Pass] ' -ForegroundColor Green -NoNewline
+                Write-Host 'Checking if NPCAP service or NPF service is running'
             }
             else {
-                Write-Host 'Checking if NPCAP service or NPF service is not running: ' -NoNewline
-                Write-Host 'Fail' -ForegroundColor Red
+                Write-Host '[Fail] ' -ForegroundColor Red -NoNewline
+                Write-Host 'Checking if NPCAP service or NPF service is not running'
+                
             }
         }
         catch {
@@ -98,12 +99,13 @@ function MDIcheckRegistryProperty {
     process {
         try {
             if ((Get-ItemProperty -Path $registryKey).$registryProperty -eq $registryValue) {
-                Write-Host "Checking if property $registryProperty in $registryKey has the value"$registryValue": " -NoNewline
-                Write-Host "Pass" -ForegroundColor Green
+                Write-Host '[Pass] ' -ForegroundColor Green -NoNewline
+                Write-Host 'Checking if property' $registryProperty 'in' $registryKey 'has the value' $registryValue
+                
             }
             else {
-                Write-Host "Checking if property $registryProperty in $registryKey has the value"$registryValue": " -NoNewline
-                Write-Host "Fail" -ForegroundColor Red
+                Write-Host '[Fail] ' -ForegroundColor Red -NoNewline
+                Write-Host 'Checking if property' $registryProperty 'in' $registryKey 'has the value' $registryValue
             }
         }
         catch {
@@ -131,12 +133,14 @@ function MDIcheckRegistryKey {
     process {
         try {
             if ((Get-ItemProperty -Path $registryKey).$registryProperty) {
-                Write-Host "Checking if property $registryProperty in $registryKey doesn't exist: " -NoNewline
-                Write-Host "Fail" -ForegroundColor Red
+                Write-Host '[Fail] ' -ForegroundColor Red -NoNewline
+                Write-Host 'Checking if property' $registryProperty 'in' $registryKey 'does not exist'
+                
             }
             else {
-                Write-Host "Checking if property $registryProperty in $registryKey doesn't exist: " -NoNewline
-                Write-Host "Pass" -ForegroundColor Green
+                Write-Host '[Pass] ' -ForegroundColor Green -NoNewline
+                Write-Host 'Checking if property' $registryProperty 'in' $registryKey 'does not exist'
+                
             }
         }
         catch {
