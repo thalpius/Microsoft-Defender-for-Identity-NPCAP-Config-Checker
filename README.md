@@ -1,6 +1,3 @@
-> [!IMPORTANT]
-> "Blog post is coming soon!"
-
 # Microsoft Defender for Identity NPCAP Config Checker
 
 Microsoft Defender for Identity uses NPCAP to inspect packets for malicious intent. Sometimes, NPCAP is not configured correctly for Microsoft Defender for Identity or NPCAP is installed by another program with different settings resulting in health issues reported by Microsoft Defender for Identity. This script will check the NPCAP settings which Microsoft Defender for Identity expects.
@@ -26,7 +23,7 @@ Save the script to the Domain Controller and run the script to validate the NPCA
 
 To find out more about configuring NPCAP for Microsoft Defender for Identity, check out my blog post:
 
-https://thalpius.com/
+https://thalpius.com/2024/08/06/microsoft-defender-for-identity-npcap-config-checker/
 
 ## 📺 Screenshots
 Here is an example of a passed config for NPCAP:
